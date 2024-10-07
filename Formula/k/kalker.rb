@@ -2,7 +2,7 @@ class Kalker < Formula
   desc "Full-featured calculator with math syntax"
   homepage "https://kalker.strct.net"
   url "https://github.com/PaddiM8/kalker/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "d8961a131425f0d677e26554839ab8a7071ec27defcccdddd9733b3d1f8a12c5"
+  sha256 "a6ccf096301a37d2bbb14fdacfc8c801a8b058b0fd38929639d03c4868564adf"
   license "MIT"
 
   bottle do
