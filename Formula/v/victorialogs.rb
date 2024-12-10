@@ -10,7 +10,7 @@ class Victorialogs < Formula
   # Make sure we only match the ones using the common format.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)-victorialogs$/i)
+    regex(/v?(\d+(?:\.\d+)+)-victorialogs$/i)
   end
 
   bottle do
