@@ -1,16 +1,13 @@
 class Victorialogs < Formula
   desc "Open source user-friendly database for logs from VictoriaMetrics"
   homepage "https://docs.victoriametrics.com/victorialogs/"
-  url "https://github.com/VictoriaMetrics/VictoriaMetrics/archive/refs/tags/v1.24.0-victorialogs.tar.gz"
-  sha256 "eefcf5063b6bd122a0179e5cb03066da816396926f96065b6bebe5592de9dc97"
+  url "https://github.com/VictoriaMetrics/VictoriaLogs/archive/refs/tags/v1.26.0.tar.gz"
+  sha256 "835f9d21ccf38bc7908118895b9b0f20adfc914b3ac1e912c5b02c16c34641a8"
   license "Apache-2.0"
 
-  # There are tags like `pmm-6401-v1.89.1` in the upstream repo. They don't
-  # actually represent releases, despite referring to one in the tag name.
-  # Make sure we only match the ones using the common format.
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)[._-]victorialogs$/i)
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
   bottle do
@@ -26,7 +23,7 @@ class Victorialogs < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X github.com/VictoriaMetrics/VictoriaMetrics/lib/buildinfo.Version=#{version}"
+    ldflags = "-s -w -X github.com/VictoriaMetrics/VictoriaLogs/lib/buildinfo.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin/"victoria-logs"), "./app/victoria-logs"
   end
 
